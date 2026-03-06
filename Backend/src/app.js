@@ -3,11 +3,12 @@ const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const connectDB = require("./config/db.js");
+const app = express();
+
 app.use(cors({
   origin: ["https://chat-app-9efx.vercel.app/"],
   credentials: true
 }));
-const app = express();
 
 const authRoutes = require("./routes/authRoutes.js");
 const conversationRoutes = require("./routes/conversationRoutes");
