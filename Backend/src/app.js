@@ -11,20 +11,17 @@ const errorMiddleware = require("./middleware/errorMiddleware.js");
 
 const app = express();
 
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://chat-app-frontend-ashy-eight.vercel.app"
-  ],
-  credentials: true
-}));
+
 
 
 
 
 connectDB();
 
-
+app.use(cors({
+  origin: ["https://chat-app-frontend-ashy-eight.vercel.app"],
+  credentials: true
+}));
 app.use(helmet());
 app.use(cors());
 app.use(express.json());

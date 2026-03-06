@@ -1,16 +1,18 @@
 const { Server } = require("socket.io");
 
-let io;
+
 
 const initSocket = (server) => {
 
-  io = new Server(server, {
+const io = new Server(server, {
    cors: {
       origin: [
         "http://localhost:5173",
         "https://chat-app-frontend-ashy-eight.vercel.app"
       ],
-      methods: ["GET", "POST"]
+      methods: ["GET", "POST"],
+      credentials: true
+
     }
   });
 
