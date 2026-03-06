@@ -1,16 +1,5 @@
-import { BrowserRouter,Routes,Route } from "react-router-dom"
-import Login from "./pages/Login"
-import Register from "./pages/Register"
-import Chat from "./pages/Chat"
-import ProtectedRoute from "./components/ProtectedRoute"
-
-function App(){
-
-return(
-
-<BrowserRouter>
-
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Chat from "./pages/Chat";
@@ -22,6 +11,7 @@ function App() {
 
       <Routes>
 
+        {/* default route */}
         <Route path="/" element={<Navigate to="/login" />} />
 
         <Route path="/login" element={<Login />} />
