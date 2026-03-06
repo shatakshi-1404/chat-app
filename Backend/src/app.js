@@ -12,14 +12,15 @@ const errorMiddleware = require("./middleware/errorMiddleware.js");
 const app = express();
 const cors = require("cors");
 
+app.use(cors({
+  origin: "*",
+  credentials: true
+}));
+
+
 
 connectDB();
-app.use(
-  cors({
-    origin: ["http://localhost:5173"],
-    credentials: true,
-  })
-);
+
 
 app.use(helmet());
 app.use(cors());
