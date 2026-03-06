@@ -10,7 +10,6 @@ const messageRoutes = require("./routes/messageRoutes");
 const errorMiddleware = require("./middleware/errorMiddleware.js");
 
 const app = express();
-const cors = require("cors");
 
 app.use(cors({
   origin: [
