@@ -13,9 +13,13 @@ const app = express();
 const cors = require("cors");
 
 app.use(cors({
-  origin: "*",
+  origin: [
+    "http://localhost:5173",
+    "https://chat-app-frontend-ashy-eight.vercel.app"
+  ],
   credentials: true
 }));
+
 
 
 
