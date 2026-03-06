@@ -3,25 +3,42 @@ const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const connectDB = require("./config/db.js");
+const allowedOrigins = [
+  "https://chat-app-6op3.vercel.app",
+  "https://chat-app-6op3-git-main-shatakshis-projects-9a761aaf.vercel.app",
+  "https://chat-app-6op3-8z0dcmigo-shatakshis-projects-9a761aaf.vercel.app",
+];
 
 const app = express();
 
 // Connect to MongoDB
 connectDB();
+app.use(
+  cors({
+    origin: function(origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 
+// Socket.io CORS
+const io = new Server(server, {
+  cors: {
+    origin: allowedOrigins,
+    methods: ["GET", "POST"],
+    credentials: true,
+  },
+});
 // Middleware
 app.use(helmet());
 app.use(express.json());
 app.use(morgan("dev"));
 
-// ✅ CORS configuration (only once!)
-app.use(
-  cors({
-    origin: "https://chat-app-6op3.vercel.app/", // frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
 
 // Routes
 const authRoutes = require("./routes/authRoutes.js");
