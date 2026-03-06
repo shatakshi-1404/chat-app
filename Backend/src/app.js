@@ -7,12 +7,13 @@ app.use(cors({
   origin: ["https://chat-app-9efx.vercel.app/"],
   credentials: true
 }));
+const app = express();
+
 const authRoutes = require("./routes/authRoutes.js");
 const conversationRoutes = require("./routes/conversationRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const errorMiddleware = require("./middleware/errorMiddleware.js");
 
-const app = express();
 
 
 
