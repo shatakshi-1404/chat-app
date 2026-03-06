@@ -12,7 +12,7 @@ function App() {
       <Routes>
 
         {/* default route */}
-        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/" element={<Navigate to="/Register" />} />
 
         <Route path="/login" element={<Login />} />
 
