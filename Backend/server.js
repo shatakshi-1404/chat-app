@@ -11,7 +11,7 @@ const server = http.createServer(app);
 // Initialize Socket.io with proper CORS
 const io = new Server(server, {
   cors: {
-    origin: "https://chat-app-9efx.vercel.app", // your frontend URL
+    origin: "https://chat-app-6op3.vercel.app/", // your frontend URL
     methods: ["GET", "POST"],
     credentials: true,
   },

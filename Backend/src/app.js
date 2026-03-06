@@ -17,7 +17,7 @@ app.use(morgan("dev"));
 // ✅ CORS configuration (only once!)
 app.use(
   cors({
-    origin: "https://chat-app-9efx.vercel.app", // frontend URL
+    origin: "https://chat-app-6op3.vercel.app/", // frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
