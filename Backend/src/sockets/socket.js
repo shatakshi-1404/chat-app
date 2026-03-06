@@ -6,10 +6,7 @@ const initSocket = (server) => {
 
 const io = new Server(server, {
    cors: {
-      origin: [
-        "http://localhost:5173",
-        "https://chat-app-frontend-ashy-eight.vercel.app"
-      ],
+      origin: ["https://chat-app-9efx.vercel.app/"],
       methods: ["GET", "POST"],
       credentials: true
 

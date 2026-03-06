@@ -3,7 +3,10 @@ const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const connectDB = require("./config/db.js");
-
+app.use(cors({
+  origin: ["https://chat-app-9efx.vercel.app/"],
+  credentials: true
+}));
 const authRoutes = require("./routes/authRoutes.js");
 const conversationRoutes = require("./routes/conversationRoutes");
 const messageRoutes = require("./routes/messageRoutes");
@@ -18,10 +21,7 @@ const app = express();
 
 connectDB();
 
-app.use(cors({
-  origin: ["https://chat-app-frontend-ashy-eight.vercel.app"],
-  credentials: true
-}));
+
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
