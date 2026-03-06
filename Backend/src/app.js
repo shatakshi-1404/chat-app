@@ -27,13 +27,7 @@ app.use(
 );
 
 // Socket.io CORS
-const io = new Server(server, {
-  cors: {
-    origin: allowedOrigins,
-    methods: ["GET", "POST"],
-    credentials: true,
-  },
-});
+
 // Middleware
 app.use(helmet());
 app.use(express.json());
