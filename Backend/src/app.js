@@ -10,8 +10,16 @@ const messageRoutes = require("./routes/messageRoutes");
 const errorMiddleware = require("./middleware/errorMiddleware.js");
 
 const app = express();
+const cors = require("cors");
+
 
 connectDB();
+app.use(
+  cors({
+    origin: ["http://localhost:5173"],
+    credentials: true,
+  })
+);
 
 app.use(helmet());
 app.use(cors());
