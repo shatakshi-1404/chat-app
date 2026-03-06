@@ -1,5 +1,6 @@
 import { io } from "socket.io-client";
 
-const socket = io("https://chat-app-backend-vzq3.onrender.com");
+const socket = io(import.meta.env.VITE_SOCKET_URL);
+
 
 export default socket;
